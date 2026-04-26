@@ -1,0 +1,294 @@
+/* --- [1] 변수 및 초기화 --- */
+:root {
+  --base-bg: #f5f6fa;
+  --process-accent: #27ae60; /* 그린 */
+  --result-accent: #f1c40f; /* 골드 (포트폴리오 포인트) */
+  --card-light: #ffffff;
+  --text-main: #2f3640;
+  --text-dim: #7f8c8d;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+
+  /* 포트폴리오 다크 테마와 연결되는 색상 */
+  --port-bg: #0a0e17;
+  --port-card: #161c2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--base-bg);
+  color: var(--text-main);
+  font-family:
+    'Pretendard',
+    -apple-system,
+    sans-serif;
+  line-height: 1.6;
+}
+
+/* --- [2] 헤더 (유리질 효과 공통) --- */
+.blog-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.2rem 5%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blog-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-main);
+  text-decoration: none;
+}
+.blog-nav a {
+  margin-left: 1.5rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-weight: 600;
+}
+.blog-nav a.active,
+.blog-nav a:hover {
+  color: var(--text-main);
+}
+
+/* --- [3] 메인 인덱스 (선택 화면 - 대비 강화) --- */
+.index-page {
+  overflow: hidden;
+}
+.index-main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selector-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.mega-card {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.mega-card:hover {
+  flex: 1.4;
+  z-index: 5;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+}
+
+.card-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 10%;
+  transition: all 0.5s ease;
+}
+.card-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* 왼쪽 카드 (PROCESS - 라이트) */
+.process-card .card-tag {
+  color: var(--process-accent);
+  background: rgba(46, 204, 113, 0.1);
+}
+.process-card .card-bg {
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-subtle);
+}
+.process-card.expanded .card-bg {
+  background-color: var(--base-bg) !important;
+}
+
+/* 오른쪽 카드 (RESULT - 다크) */
+.result-card .card-tag {
+  color: var(--result-accent);
+  background: rgba(241, 196, 15, 0.1);
+}
+.result-card .card-bg {
+  background-color: var(--port-card);
+} /* 인덱스에서부터 다크하게 */
+.result-card h2,
+.result-card p {
+  color: #ffffff;
+}
+.result-card.expanded .card-bg {
+  background-color: var(--port-bg) !important;
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 0.4s;
+}
+.mega-card.expanded .card-content {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* --- [4] 블로그 및 일반 페이지 레이아웃 --- */
+.blog-page {
+  overflow-y: auto;
+}
+.blog-container {
+  max-width: 1200px;
+  margin: 120px auto 60px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  padding: 0 20px;
+}
+.container-narrow {
+  max-width: 900px;
+  grid-template-columns: 1fr;
+}
+.container-medium {
+  max-width: 700px;
+  grid-template-columns: 1fr;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  border-left: 5px solid var(--process-accent);
+  padding-left: 15px;
+}
+
+/* 공통 카드 디자인 */
+.post-card,
+.sidebar-widget,
+.link-item {
+  background-color: var(--card-light);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.post-card {
+  padding: 30px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--process-accent);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.post-tag {
+  color: var(--process-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.post-date {
+  color: #bdc3c7;
+  font-size: 0.8rem;
+}
+
+/* 사이드바 및 위젯 */
+.sidebar-widget {
+  padding: 25px;
+  margin-bottom: 30px;
+}
+.widget-title {
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--base-bg);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.category-list {
+  list-style: none;
+}
+.category-list a {
+  color: var(--text-dim);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.category-list a:hover {
+  color: var(--process-accent);
+}
+
+/* 상세페이지 및 마이페이지 전용 */
+.post-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.post-content {
+  line-height: 2;
+  color: #333;
+  font-size: 1.1rem;
+}
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.link-item {
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+}
+.link-item:hover {
+  transform: translateX(10px);
+  border-color: var(--process-accent);
+}
+.status-badge {
+  font-size: 0.8rem;
+  background: #e1ffed;
+  color: #27ae60;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+/* --- [5] 반응형 --- */
+@media (max-width: 900px) {
+  .selector-container {
+    flex-direction: column;
+  }
+  .process-card .card-bg {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+}

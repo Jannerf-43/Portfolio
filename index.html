@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JANNERF.LOG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="index-page">
+    <header class="blog-header">
+      <div class="header-container">
+        <a href="index.html" class="blog-logo">JANNERF.LOG</a>
+        <nav class="blog-nav">
+          <a href="index.html" class="active">HOME</a>
+          <a href="blog-home.html">BLOG</a>
+          <a href="mypage.html">MYPAGE</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="index-main">
+      <div class="selector-container">
+        <div
+          class="mega-card process-card"
+          onclick="expandCard(this, 'blog-home.html')"
+        >
+          <div class="card-content">
+            <span class="card-tag">STEP 01. PROCESS</span>
+            <h2>보안 연구 및 학습 과정</h2>
+            <p>
+              리눅스 구축부터 파이썬 스캐너 제작까지, 지식을 습득하며 마주한
+              기록입니다.
+            </p>
+          </div>
+          <div class="card-bg"></div>
+        </div>
+
+        <div
+          class="mega-card result-card"
+          onclick="expandCard(this, 'portfolio.html')"
+        >
+          <div class="card-content">
+            <span class="card-tag">STEP 02. RESULTS</span>
+            <h2>포트폴리오</h2>
+            <p>완성된 프로젝트 링크가 포함된 포트폴리오를 확인하세요.</p>
+          </div>
+          <div class="card-bg"></div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function expandCard(element, url) {
+        if (document.body.classList.contains('is-expanding')) return
+
+        element.classList.add('expanded')
+        document.body.classList.add('is-expanding')
+
+        // 이동 전 부드러운 페이드아웃 효과를 위해 시간차를 둠
+        setTimeout(() => {
+          window.location.href = url
+        }, 750)
+      }
+    </script>
+  </body>
+</html>

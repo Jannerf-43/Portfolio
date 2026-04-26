@@ -1,0 +1,89 @@
+/* portfolio.css */
+:root {
+  --port-bg: #0a0e17;
+  --port-card: #161c2d;
+  --port-accent: #f1c40f; /* 골드 */
+  --port-text: #e0e6ed;
+  --port-border: rgba(241, 196, 15, 0.15);
+}
+
+body.portfolio-page {
+  background-color: var(--port-bg);
+  color: var(--port-text);
+}
+
+/* 포트폴리오용 헤더 커스텀 */
+.portfolio-page .blog-header {
+  background-color: rgba(10, 14, 23, 0.8);
+  border-bottom: 1px solid var(--port-border);
+}
+.portfolio-page .blog-logo,
+.portfolio-page .blog-nav a {
+  color: var(--port-text);
+}
+.portfolio-page .blog-nav a.active {
+  color: var(--port-accent);
+}
+
+/* 레이아웃 및 섹션 */
+.port-container {
+  max-width: 1000px;
+  margin: 150px auto 100px;
+  padding: 0 20px;
+}
+.port-section {
+  margin-bottom: 100px;
+}
+.port-section-title {
+  font-size: 2rem;
+  color: var(--port-accent);
+  border-bottom: 2px solid var(--port-accent);
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.port-card {
+  background: var(--port-card);
+  border: 1px solid var(--port-border);
+  padding: 40px;
+  border-radius: 24px;
+  transition: all 0.4s;
+}
+.port-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--port-accent);
+}
+
+/* 기술 스택 및 프로젝트 그리드 */
+.tech-stack {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.badge {
+  background: rgba(241, 196, 15, 0.05);
+  color: var(--port-accent);
+  border: 1px solid var(--port-accent);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.project-card h3 {
+  color: var(--port-accent);
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

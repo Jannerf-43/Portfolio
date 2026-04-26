@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JANNERF.LOG | BLOG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="blog-page">
+    <header class="blog-header" id="mainHeader">
+      <div class="header-container">
+        <a href="index.html" class="blog-logo">JANNERF.LOG</a>
+        <nav class="blog-nav">
+          <a href="index.html">HOME</a>
+          <a href="blog-home.html" class="active">BLOG</a>
+          <a href="mypage.html">MYPAGE</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="blog-container">
+      <section class="main-content">
+        <h2 class="section-title">Latest Updates</h2>
+
+        <div class="post-grid">
+          <article class="post-card" onclick="location.href = '#'">
+            <div class="post-tag">WEB SECURITY</div>
+            <h3>SQL Injection 자동화 스캐너 로직 분석</h3>
+            <p>
+              404_Can_Found 프로젝트의 핵심 모듈인 SQLi 탐지 알고리즘을 어떻게
+              구현했는지 상세히 정리합니다.
+            </p>
+            <span class="post-date">2026.04.15</span>
+          </article>
+
+          <article class="post-card" onclick="location.href = '#'">
+            <div class="post-tag">LINUX</div>
+            <h3>Ubuntu 환경에서 VMware SSH 설정 삽질기</h3>
+            <p>
+              방화벽 설정과 포트 포워딩 과정에서 겪었던 권한 문제와 해결 방법을
+              공유합니다.
+            </p>
+            <span class="post-date">2026.04.10</span>
+          </article>
+
+          <article class="post-card" onclick="location.href = '#'">
+            <div class="post-tag">PYTHON</div>
+            <h3>파이썬 멀티스레딩을 이용한 스캔 속도 개선</h3>
+            <p>
+              대량의 URL을 효율적으로 처리하기 위해 적용한 멀티스레딩 기법과
+              성능 비교 결과입니다.
+            </p>
+            <span class="post-date">2026.04.05</span>
+          </article>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Categories</h3>
+          <ul class="category-list">
+            <li>
+              <a href="#">자격증 <span>2</span></a>
+            </li>
+            <li>
+              <a href="#">리눅스 <span>5</span></a>
+            </li>
+            <li>
+              <a href="#">웹 공부 <span>12</span></a>
+            </li>
+            <li>
+              <a href="#">파이썬 & 코딩 <span>8</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Profile</h3>
+          <p class="profile-text">
+            <strong>Security Student @ JBU</strong><br />
+            Focus on Web Security & Forensics.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <script>
+      // 스크롤 시 헤더 그림자 효과
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('mainHeader')
+        if (window.scrollY > 20) {
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)'
+          header.style.padding = '1rem 5%'
+        } else {
+          header.style.boxShadow = 'none'
+          header.style.padding = '1.2rem 5%'
+        }
+      })
+    </script>
+  </body>
+</html>

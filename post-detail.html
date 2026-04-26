@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JANNERF.LOG | 포스트 상세</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="blog-page">
+    <header class="blog-header">
+      <div class="header-container">
+        <a href="index.html" class="blog-logo">JANNERF.LOG</a>
+        <nav class="blog-nav">
+          <a href="index.html">HOME</a>
+          <a href="blog-home.html" class="active">BLOG</a>
+          <a href="mypage.html">MYPAGE</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="blog-container container-narrow">
+      <article class="post-card no-hover">
+        <div class="post-header">
+          <div class="post-tag">WEB SECURITY</div>
+          <h1 class="post-title">SQL Injection 자동화 스캐너 로직 분석</h1>
+          <div class="post-meta">작성일: 2026.04.15 | 작성자: JANNERF</div>
+        </div>
+
+        <div class="post-content">
+          <p>
+            보안 스캐너 제작의 핵심인 <strong>Blind SQL Injection</strong> 탐지
+            로직을 정리합니다.
+          </p>
+          <h2>1. 탐지 알고리즘 설계</h2>
+          <p>
+            멀티스레딩을 활용하여 페이로드를 전송하고 응답 시간을 측정합니다.
+          </p>
+          <blockquote>
+            "자동화의 핵심은 오탐(False Positive)을 줄이는 것에 있습니다."
+          </blockquote>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
