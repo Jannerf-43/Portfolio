@@ -5,6 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JANNERF.LOG | MYPAGE</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="nav_style.css" />
+    <style>
+      /* 프로필 섹션 전용 추가 스타일 */
+      .profile-card {
+        background: #ffffff;
+        border: 1px solid #dfe4ea;
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      }
+
+      .profile-avatar {
+        width: 80px;
+        height: 80px;
+        background: #f1f2f6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        border: 2px solid #0984e3;
+      }
+
+      .profile-details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .profile-name {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #2d3436;
+      }
+
+      .profile-email {
+        font-size: 1rem;
+        color: #0984e3;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .profile-bio {
+        font-size: 0.9rem;
+        color: #636e72;
+        margin-top: 5px;
+      }
+
+      /* 기존 링크 아이템 보완 */
+      .section-subtitle {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #2d3436;
+        margin-bottom: 15px;
+        display: block;
+      }
+    </style>
   </head>
   <body class="blog-page">
     <header class="blog-header">
@@ -18,8 +79,23 @@
       </div>
     </header>
 
-    <main class="blog-container container-medium">
-      <h2 class="section-title">My External Links</h2>
+    <main class="blog-container container-medium" style="margin-top: 50px">
+      <section class="profile-section">
+        <div class="profile-card">
+          <div class="profile-avatar">👤</div>
+          <div class="profile-details">
+            <h1 class="profile-name">손유승</h1>
+            <a href="mailto:yuseung@example.com" class="profile-email"
+              >jannerf43@gmail.com</a
+            >
+            <p class="profile-bio">
+              Information Security Student @ Joongbu University
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="section-subtitle">My External Links</h2>
       <div class="link-list">
         <a
           href="https://github.com/Jannerf-43"
@@ -36,8 +112,19 @@
 
         <a href="https://web-secure-lab.vercel.app/" class="link-item">
           <div class="link-info">
-            <strong>Secure Lab v1.0</strong
-            ><span class="status-badge">Team Project</span>
+            <strong>Secure Lab v1.0</strong>
+            <span
+              class="status-badge"
+              style="
+                background: #0984e3;
+                color: #fff;
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-size: 0.7rem;
+                margin-left: 5px;
+              "
+              >Team Project</span
+            >
             <div class="link-desc">안전한 비밀번호 생성/저장</div>
           </div>
           <span>→</span>
